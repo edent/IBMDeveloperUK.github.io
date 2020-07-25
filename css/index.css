@@ -1,160 +1,78 @@
-/* Styles specific to home page */
+.our-team .team-member-col {
+  width: 20%; /* this is out of 100% for the width i.e 33.33% would be 3 team members etc */
+  text-align: center;
+  padding: 15px;
+}
+
+.team-member {
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-position: center top;
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
+}
+
+.team-member span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.team-member:hover span {
+  display: block;
+}
+
+.team-member:hover {
+  background: #dcdcdc;
+}
+
+.team-member-liam {
+  background-image: url(/assets/img/liam.png);
+}
+
+.team-member-yamini {
+  background-image: url(/assets/img/liam.png);
+}
+
+.team-member-sean {
+  background-image: url(/assets/img/liam.png);
+}
+
+.team-member-ross {
+  background-image: url(/assets/img/liam.png);
+}
+
+.team-member-ed {
+  background-image: url(/assets/img/liam.png);
+}
 
 .home-header {
-	padding-top: calc(var(--feather-grid-mega) * 3);
-	padding-bottom: calc(var(--feather-grid-mega) * 1.75);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .subheading {
-    margin: var(--feather-grid-medium) 0;
+  margin: 1rem 0;
 }
 
 .subheading a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
-.subheading a:link, .subheading a:visited {
-	color: white;
+.subheading a:link,
+.subheading a:visited {
+  color: white;
 }
 
-.subheading a:hover, .subheading a:active {
-	color: var(--tw-color-blue-faded);
+.subheading a:hover,
+.subheading a:active {
+  color: #97e3ff;
 }
 
-.grey {
-	background-color: var(--tw-color-gray-faint);
+.explore-projects-paragraph {
+  max-width: 300px;
 }
-
-.small-container {
-	max-width: calc(var(--feather-grid-page-width) - var(--feather-grid-mega) * 4);
-	margin: 0 auto;
-}
-
-.small-container .Grid-cell {
-	padding: var(--feather-grid-large) var(--feather-grid-mega);
-	max-width: 600px;
-}
-
-/*Timeline height changed with JS. timeline-cell height is set as a backup.*/
-.timeline-cell {
-	height: 700px;
-}
-
-.open-source-title a {
-	text-decoration: none;
-}
-
-.open-source-title a:link, .open-source-title a:visited {
-	color: inherit;
-}
-
-.open-source-title a:hover, .open-source-title a:active {
-	color: var(--tw-color-text-link);
-}
-
-/* Center text vertically */
-
-.open-source-title {
-	margin-top: 325px;
-}
-
-/* Our Philosophy - images */
-
-img.emoji-img {
-	display: block;
-	width: 175px;
-	height: 175px;
-}
-
-/* Home page media queries */
-
-/* Less than --feather-grid-page-width + (--feather-grid-mega * 2) */
-@media (max-width: 1236px) {
-	.home-header {
-		padding-bottom: calc(var(--feather-grid-mega) * 1.5);
-	}
-}
-
-/* Less than 600px */
-
-@media (max-width: 600px) {
-	.timeline-cell {
-		height: 450px;
-	}
-
-}
-
-/* Explore Projects */
-
-.explore-projects {
-	background-image: url("../assets/network.svg");
-	background-repeat: no-repeat;
-    background-size: auto 380px;
-	background-position: bottom right -50px;
-}
-
-/* Empty space for mobile layout of explore projects */
-.explore-projects-blank {
-	height: 320px;
-	display: none;
-}
-
-/* Greater than 1400px */
-@media (min-width: 1400px) {
-	.explore-projects {
-		background-position: bottom right;
-	}
-}
-
-/* Explore Projects media query breakpoints */
-
-/* Image size slightly smaller between 1050px and 1236px */
-@media (max-width: 1236px) and (min-width: 1050px) {
-	.explore-projects {
-		background-position: bottom right -100px;
-		background-size: auto 350px;
-	}
-}
-
-@media (max-width: 1050px) {
-	.explore-projects {
-		background-position: bottom right -250px;
-	}
-}
-
-@media (max-width: 860px) {
-	.explore-projects {
-		background-position: bottom right -350px;
-	}
-}
-
-@media (max-width: 700px) {
-	.explore-projects {
-		background-position: bottom right -400px;
-	}
-}
-
-/* Empty space now displayed */
-@media (max-width: 600px) {
-	.explore-projects-blank {
-		display: block;
-	}
-
-	.explore-projects {
-		background-position: bottom right -250px;
-	}
-}
-
-@media (max-width: 480px) {
-	.explore-projects {
-		background-position: bottom right -350px;
-	}
-}
-
-@media (max-width: 380px) {
-	.explore-projects {
-		background-position: bottom right -400px;
-	}
-}
-
-

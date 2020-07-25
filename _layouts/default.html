@@ -3,103 +3,76 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="title" content="{{ page.title }}">
-    <meta name="description" content="{{ page.description }}">
-    <meta name="keywords" content="{{ page.keywords }}">
+    <meta
+      name="description"
+      content="IBM Developer UK project, workshops and material"
+    />
+    <meta
+      name="keywords"
+      content="ibm, open, source, open source, material, workshop"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="og:title" content="{{ page.title }}">
-    <meta name="og:url" content="{{ page.url }}">
-    <!-- <meta name="og:image" content="{{ page.logo }}"> -->
-    <meta name="og:description" content="{{ page.description }}">
+    <!-- Page Title -->
+    <title>IBM Developer | {{ page.title }}</title>
 
-    <meta name="ibm:card" content="summary" />
-    <meta name="ibm:site" content="{{ page.url }}" />
-    <meta name="ibm:title" content="{{ page.title }}" />
-    <meta name="ibm:description" content="{{ page.description }}" />
-    <!-- <meta name="ibm:image" content="{{ page.logo }}" /> UNCOMMENT THIS FOR A LOGO ON THE BROWSER TAB-->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta http-equiv='Expires' content='0'>
-    <meta http-equiv='Pragma' content='no-cache'>
-    <meta http-equiv='Cache-Control' content='no-cache'>
-    <meta http-equiv='imagetoolbar' content='no'>
-
-    <title>{{ page.title }}</title>
-    <!-- <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/assets/favicon.ico"/> -->
-
-    <!-- Feather CSS -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/feather-core.css"/>
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/feather-component-grid.css"/>
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/feather-component-button.css"/>
+    <!-- Index CSS -->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"/>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ page.custom_css }}"/>
-
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
   </head>
 
   <body>
-
     <!-- Navigation Bar -->
     <nav>
-        <div class="nav-title">
-            <!-- <span class="Icon Icon--logo Icon--large"></span> -->
+      <div class="nav-title">
+        <!-- <span class="Icon Icon--logo Icon--large"></span> -->
 
-            <!-- Link in web -->
-            <a class="home-link" href="{{ site.baseurl }}/">IBM Developer UK</a>
+        <!-- Link in web -->
+        <a class="home-link" href="{{ site.baseurl }}/">IBM Developer UK</a>
 
-            <!-- Text in mobile -->
-            <p class="home-text">IBM Developer UK</p>
-            <span id="caret" class="Icon Icon--caretDown"></span>
-        </div>
-        <ul class="nav-menu">
-            <!-- This link only exists in mobile -->
-            <li id="extra-mobile-link" class="nav-list-item">
-                <a class="nav-link" href="{{ site.baseurl }}/">IBM Developer UK</a>
-            </li>
+        <!-- Text in mobile -->
+        <p class="home-text">IBM Developer UK</p>
+        <span id="caret" class="Icon Icon--caretDown"></span>
+      </div>
+      <ul class="nav-menu">
+        <!-- This link only exists in mobile -->
+        <li id="extra-mobile-link" class="nav-list-item">
+          <a class="nav-link" href="{{ site.baseurl }}/">IBM Developer UK</a>
+        </li>
 
-            <li class="nav-list-item">
-                <a class="nav-link" href="{{ site.baseurl }}/projects">Projects</a>
-            </li>
-            
-            <li class="nav-list-item">
-                <a class="nav-link" href="https://www.meetup.com/IBM-Code-London/" target="_blank">Meetup</a>
-            </li>
+        <li class="nav-list-item">
+          <a class="nav-link" href="{{ site.baseurl }}/projects">Projects</a>
+        </li>
 
-            <li class="nav-list-item list-end">
-                <a class="nav-link" href="https://github.com/IBMDeveloperUK" target="_blank">GitHub</a>
-            </li>
+        <li class="nav-list-item">
+          <a
+            class="nav-link"
+            href="https://www.meetup.com/IBM-Code-London/"
+            target="_blank"
+            >Meetup</a
+          >
+        </li>
 
-            
-        </ul>
+        <li class="nav-list-item list-end">
+          <a
+            class="nav-link"
+            href="https://github.com/IBMDeveloperUK"
+            target="_blank"
+            >GitHub</a
+          >
+        </li>
+      </ul>
     </nav>
 
-    <!-- Site wrapper -->
-    <div class="site">
-        {{ content }}
+    <!-- Site Wrapper -->
+    <div>
+      {{ content }}
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <div class="Grid container">
-            <div class="Grid-cell footer-cell u-size1of4 footer-margin">
-                <button onclick="location.href='{{ site.baseurl }}/projects'" type="button" class="Button Button--large">Explore Projects</button>
-            </div>
-
-            <div class="Grid-cell footer-cell u-size1of4">
-                <a class="foot-link" target="_blank" href="https://developer.ibm.com/">© 2020 IBM Developer UK, Inc.</a>
-            </div>
-
-        </div>
-    </div> <!-- End of Footer -->
+    <footer class="section footer text-center">
+      @2020 IBM Developer UK, Inc
+    </footer>
   </body>
-
 </html>
-
-<script src="{{ site.baseurl }}/js/main.js"></script>
-<script src="{{ site.baseurl }}/js/{{ page.custom_js }}"></script>
-
-{% include ga.html %}
