@@ -1,36 +1,37 @@
 ---
 layout: default
-
 title: Projects
-description: All IBM Developer UK Projects
-keywords: ibm, open, source, open source, material, workshop
-url: https://ibmdeveloperuk.github.io/projects
-custom_css: projects.css
-custom_js: projects.js
+description: IBM Developer UK Projects
+url: https://ibmdeveloperuk.github.io/
 ---
+
+<link rel="stylesheet" type="text/css" href="css/main.css" />
 
 <!-- Header -->
 
 <div class="header simple-header">
-    <div class="Grid container">
-        <div id="header-text" class="Grid-cell">
-            <h1 class="large-title">Projects</h1>
-            <div class="search-bar">
-                <input class="search-box" type="text" name="search" placeholder="Search Projects" autocomplete="off" />
-                <span class="Icon Icon--search"></span>
-            </div>
-        </div>
+  <div>
+    <div>
+      <h1>Projects</h1>
+      <div>
+        <input
+          type="text"
+          name="search"
+          placeholder="Search Projects"
+          autocomplete="off"
+        />
+        <span></span>
+      </div>
     </div>
-
+  </div>
 </div>
 
 <!-- Container for no results text -->
-<div class="Grid container no-results-container"></div>
+<div></div>
 
 <!-- Projects grid (See renderProjects() in projects.js) -->
-<div class="Grid container all-projects"></div>
+<div></div>
 <!-- End of all-projects -->
-
 
 <!-- When projects has data, this will display them on the projects page -->
 <!-- <script type="text/javascript">
@@ -53,4 +54,7 @@ custom_js: projects.js
     {% endfor %}
 </script> -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js" async></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"
+  async
+></script>
