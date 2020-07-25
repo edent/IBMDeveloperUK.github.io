@@ -48,11 +48,6 @@ a {
   color: white;
 }
 
-.simple-header {
-  padding-top: calc(2rem * 3);
-  padding-bottom: 2rem;
-}
-
 .bg-white {
   background-color: #fff;
 }
