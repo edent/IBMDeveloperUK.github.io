@@ -91,6 +91,19 @@ a {
   background-color: #3595f5;
 }
 
+
+.twitter-button {
+  padding: 5px 10px;
+  background-color: #4d88ca;
+  color: #fff;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.twitter-button:hover {
+  background-color: #3595f5;
+}
+
 /* Navigation wrapper */
 
 nav {
