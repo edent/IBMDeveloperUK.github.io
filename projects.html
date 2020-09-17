@@ -27,254 +27,86 @@ url: https://ibmdeveloperuk.github.io/
   />
 </div>
 
-<!-- Projects grid (See renderProjects() in projects.js) -->
+<!-- Projects grid -->
 <div class="section bg-white">
-  <div class="d-flex justify-center flex-wrap project-overflow">
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
+  <div
+    id="main-project-container"
+    class="d-flex justify-center flex-wrap project-overflow"
+  >
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"
+      async
+    ></script>
 
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
+    <script>
+      var request = new XMLHttpRequest();
+      request.open(
+        "GET",
+        "https://api.github.com/users/IBMDeveloperUK/repos?per_page=100",
+        true
+      );
+      request.onload = function () {
+        let data = JSON.parse(this.response);
+        console.log(data);
 
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
+        function makeProjectGrid() {
+          // Establish the array which acts as a data source for the list
+          let listData = data,
+            // Set up the loop that goes through the array 1 index at a time
+            numberOfListItems = listData.length,
+            listItem,
+            i;
 
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
+          for (i = 0; i < numberOfListItems; ++i) {
+            // create a project tile for each repository
+            projectContainer = document.createElement("div");
+            projectContainer.id = "project-container";
+            projectContainer.className = "project-container";
+            document
+              .getElementById("main-project-container")
+              .appendChild(projectContainer);
 
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
+            project = document.createElement("div");
+            project.id = "project";
+            project.className = "project";
+            projectContainer.appendChild(project);
 
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
+            projectContents = document.createElement("div");
+            projectContents.id = "project-contents";
+            project.appendChild(projectContents);
 
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
+            title = document.createElement("h3");
+            title.id = "title";
+            title.innerHTML = listData[i].name;
+            projectContents.appendChild(title);
 
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
+            description = document.createElement("p");
+            description.id = "description";
+            if (listData[i].description) {
+              description.innerHTML = listData[i].description;
+            } else {
+              description.innerHTML = "No description to show!";
+            }
+            projectContents.appendChild(description);
 
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
+            language = document.createElement("p");
+            language.id = "language";
+            language.innerHTML = listData[i].language;
+            projectContents.appendChild(language);
 
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
+            link = document.createElement("a");
+            link.id = "link";
+            link.className = "primary-button";
+            link.innerHTML = "View Project on GitHub";
+            link.href = listData[i].html_url;
+            link.target = "_blank";
+            projectContents.appendChild(link);
+          }
+        }
 
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container">
-      <div class="project">
-        <div>
-          <h3>*Title*</h3>
-          <p>*Description*</p>
-          <p>*Language*</p>
-          <a href="#" class="primary-button">View Project on GitHub</a>
-        </div>
-      </div>
-    </div>
+        makeProjectGrid();
+      };
+      request.send();
+    </script>
   </div>
 </div>
-<!-- End of all-projects -->
-
-<!-- When projects has data, this will display them on the projects page -->
-<!-- <script type="text/javascript">
-    let allProjects = [];
-    {% for item in site.data.projects %}
-        allProjects.push({
-            name: "{{ item[1]["name"] }}",
-            nameWithOwner: "{{ item[1]["nameWithOwner"] }}",
-            description: `{{ item[1]["descriptionHTML"] }}`,
-            color: "{{ item[1]["primaryLanguage"]["color"] }}",
-            primaryLanguage: "{{ item[1]["primaryLanguage"]["name"] }}",
-            homepageURL: "{{ item[1]["homepageUrl"] }}",
-            pushedAt : "{{ item[1]["pushedAt"] }}",
-            languages : "{{ item[1]["languages"] }}",
-            forks : "{{ item[1]["forkCount"] }}",
-            topics : "{{ item[1]["repositoryTopics"] }}",
-            stars : "{{ item[1]["stargazers"] }}",
-            watchers : "{{ item[1]["watchers"] }}",
-        })
-    {% endfor %}
-</script> -->
-
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"
-  async
-></script>
