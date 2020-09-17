@@ -52,13 +52,13 @@ url: https://ibmdeveloperuk.github.io/
         function makeList() {
           // Establish the array which acts as a data source for the list
           let listData = data,
-            // Set up a loop that goes through the items in listItems one at a time
+            // Set up the loop that goes through the array 1 index at a time
             numberOfListItems = listData.length,
             listItem,
             i;
 
           for (i = 0; i < numberOfListItems; ++i) {
-            // create an item for each one
+            // create a project tile for each repository
             projectContainer = document.createElement("div");
             projectContainer.id = "project-container";
             projectContainer.className = "project-container";
@@ -105,8 +105,6 @@ url: https://ibmdeveloperuk.github.io/
         }
 
         makeList();
-
-        //*************************************************************************
       };
       request.send();
     </script>
