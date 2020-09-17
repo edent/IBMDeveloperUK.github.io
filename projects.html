@@ -82,18 +82,24 @@ url: https://ibmdeveloperuk.github.io/
 
             description = document.createElement("p");
             description.id = "description";
-            description.innerHTML = listData[i].description;
+            if (listData[i].description) {
+              description.innerHTML = listData[i].description;
+            } else {
+              description.innerHTML = "No description to show!";
+            }
             projectContents.appendChild(description);
 
             language = document.createElement("p");
             language.id = "language";
             language.innerHTML = listData[i].language;
-            projectContents.appendChild(description);
+            projectContents.appendChild(language);
 
             link = document.createElement("a");
             link.id = "link";
             link.className = "primary-button";
             link.innerHTML = "View Project on GitHub";
+            link.href = listData[i].html_url;
+            link.target = "_blank";
             projectContents.appendChild(link);
           }
         }
