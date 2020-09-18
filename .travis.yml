@@ -5,10 +5,12 @@ rvm:
   - 2.5.1
 install:
   - gem install jekyll bundler
+  - gem install html-proofer
 before_script:
   - bundle install
 script:
   - bundle exec jekyll build
+  - bundle exec htmlproofer ./_site
 branches:
   only:
     - master
