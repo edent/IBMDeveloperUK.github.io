@@ -9,6 +9,8 @@ before_script:
   - bundle install
 script:
   - bundle exec jekyll build
+notifications:
+  email: false
 branches:
   only:
     - master
