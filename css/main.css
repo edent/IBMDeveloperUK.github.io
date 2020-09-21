@@ -193,6 +193,10 @@ a.nav-link:active {
 
 /*Read more */
 
-#more {display: inline-block;}
+#more {display: none;}
 
 
+/* .w3-dark-grey{
+  color: #fff;
+  background-color: #616161 
+} */
