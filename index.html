@@ -6,7 +6,22 @@ url: https://ibmdeveloperuk.github.io/
 ---
 
 <!-- Header -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+<script> 
+  $(document).ready(function(){
+    $(".read").click(function(){
+       $(this).prev().toggle();
+       $(this).siblings('.dots').toggle();
+       if($(this).text()=='read more'){
+   $(this).text('read less');
+       }
+       else{
+   $(this).text('read more');
+       }
+    });
+  });
+</script>
 
 <div class="header home-header text-center">
   <div>
@@ -38,14 +53,19 @@ url: https://ibmdeveloperuk.github.io/
             <a href="https://www.linkedin.com/in/liam-conroy-hampton/" class="social-button" target="_blank"><img src="assets/img/LinkedIn.png"/></a>
       </h3>
       <br />
-      <p>
-        
+      
+    <div class ="post">
         Liam focuses on developer advocacy with a keen interest in Golang and
-        open source.He builds workshops, creates short tutorials, attends
+        open source
+        <span class="dots">...</span>
+        <span class="more">
+        He builds workshops, creates short tutorials, attends
         hackathons and writes blogs</span>
-      </p>
-
+        <button class ="read">read more</button>
     </div>
+  </div>
+
+  
 
     <div class="team-member-col">
       <div class="team-member-yamini team-member">
@@ -55,19 +75,21 @@ url: https://ibmdeveloperuk.github.io/
       <h3>
         <a href="https://twitter.com/yaminigrao" class="social-button" target="_blank"><img src="assets/img/twitter.png" /></a>
           <a href="https://github.com/YaminiRao" class="social-button" target="_blank"><img src="assets/img/github.png" /></a>
-            <a href="https://www.linkedin.com/in/yamini-rao/" class="social-button" target="_blank"><img src="assets/img/linkedin.png"/></a>
-        
+            <a href="https://www.linkedin.com/in/yamini-rao/" class="social-button" target="_blank"><img src="assets/img/linkedin.png"/></a> 
       </h3>
       <br />
-      <p>
+
+      
+      <div class = "post">
         As a Developer Advocate,Yamini compiles developer scenarios, workshops
-        and training material based on IBM Cloud technologies. She is active in
+        and training material
+        <span class="dots">...</span>
+        <span class="more"> based on IBM Cloud technologies. She is active in
         the local developer communities by collaborating with them to present
         and organise Workshops, Meetups and Conferences</span>
-      </p>
+      <button class ="read">read more</button>
+      </div>
     </div>
-
-
 
 
     <div class="team-member-col">
@@ -81,11 +103,13 @@ url: https://ibmdeveloperuk.github.io/
             <a href="https://www.linkedin.com/in/ross-cruickshank/" class="social-button" target="_blank"><img src="assets/img/linkedin.png"/></a>
       </h3>
       <br />
-      <p>
+      <div class ="post">
         Ross is a Developer Advocate, helping developers (startups through
-        enterprise) across the UK benefit from IBM Cloud platform and services. He is keen and active in recruiting into and maintaining the IBM and
+        enterprise)<span class="dots">...</span>
+        <span class="more"> across the UK benefit from IBM Cloud platform and services. He is keen and active in recruiting into and maintaining the IBM and
         open source ecosystem</span>
-      </p>
+        <button class ="read">read more</button>
+      </div>
     </div>
 
 
@@ -101,11 +125,13 @@ url: https://ibmdeveloperuk.github.io/
             <a href="https://www.linkedin.com/in/edshee/" class="social-button" target="_blank"><img src="assets/img/linkedin.png"/></a>
       </h3>
       <br />
-      <p>
+      <div class = "post">
         As A Developer Advocate, Ed has a focus on cloud native computing and
-        works extensively with Docker, Kubernetes and Cloud Foundry as well as
-        dabbling in Node.js and AI/ML
-      </p>
+        works extensively with Docker<span class="dots">...</span>
+        <span class="more"> ,Kubernetes and Cloud Foundry as well as
+        dabbling in Node.js and AI/ML</span>
+        <button class ="read">read more</button>
+      </div>
     </div>
 
     <div class="team-member-col">
@@ -119,11 +145,13 @@ url: https://ibmdeveloperuk.github.io/
           <a href="https://www.linkedin.com/in/seanmtracey/" class="social-button" target="_blank"><img src="assets/img/linkedin.png"/></a>
       </h3>
       <br />
-      <p>
+      <div class = "post">
         Sean's career has been focused around rapid prototyping and MVP
-        creation. His skill set includes client and server-side JavaScript,
-        Python, C++ (Wiring and openFrameworks), and circuit design
-      </p>
+        creation.<span class="dots">...</span>
+        <span class="more"> His skill set includes client and server-side JavaScript,
+        Python, C++ (Wiring and openFrameworks), and circuit design </span>
+        <button class ="read">read more</button>
+      </div>
     </div>
 
     <div class="team-member-col">
@@ -137,12 +165,14 @@ url: https://ibmdeveloperuk.github.io/
             <a href="https://www.linkedin.com/in/margrietgroenendijk/" class="social-button" target="_blank"><img src="assets/img/linkedin.png"/></a>
       </h3>
       <br />
-      <p>
+      <div class = "post">
         Margriet is a Data & AI Developer Advocate. She develops and presents
-        talks and workshops about data science and AI. She is active in the
+        talks<span class="dots">...</span>
+        <span class="more"> and workshops about data science and AI. She is active in the
         local developer communities through attending, presenting and organising
-        meetups
-      </p>
+        meetups</span>
+        <button class ="read">read more</button>
+      </div>
     </div>
 
     <div class="team-member-col">
@@ -156,10 +186,12 @@ url: https://ibmdeveloperuk.github.io/
             <a href="https://www.linkedin.com/in/matthamilton77/" class="social-button" target="_blank"><img src="assets/img/linkedin.png"/></a>
       </h3>
       <br/>
-      <p>
+      <div class = "post">
         Matt is a developer advocate based in Bristol with an interest in
-        machine learning, AI, blockchain and fintech
-      </p>
+        machine learning<span class="dots">...</span>
+        <span class="more">, AI, blockchain and fintech</span>
+        <button class ="read">read more</button>
+      </div>
     </div>
 
     <div class="team-member-col">
@@ -173,12 +205,15 @@ url: https://ibmdeveloperuk.github.io/
             <a href="https://www.linkedin.com/in/simonarbaker/" class="social-button" target="_blank"><img src="assets/img/linkedin.png"/></a>
       </h3>
       <br />
-      <p>
+      <div class = "post">
         Simon is a Client Developer Advocate guiding Integrated Account teams in
-        UKI. He provides advocacy to Startups, Developers, ScaleUps and all
+        UKI<span class="dots">...</span>
+        <span class="more"> He provides advocacy to Startups, Developers, ScaleUps and all
         innovation players in the ecosystem, both from a Technical perspective
         and importantly from a Commercial perspectiv
-      </p>
+      </span>
+      <button class ="read">read more</button>
+      </div>
     </div>
 
     <div class="team-member-col">
@@ -193,11 +228,13 @@ url: https://ibmdeveloperuk.github.io/
         </a>
       </h3>
       <br />
-      <p>
+      <div class = "post">
         Andrea is a Developer Advocate at IBM, a hacker and open source
-        enthusiast. He's a maintainer and a member of the governing board for
-        Tekton and frequent speaker at conferences about open source
-      </p>
+        enthusiast.<span class="dots">...</span>
+        <span class="more"> He's a maintainer and a member of the governing board for
+        Tekton and frequent speaker at conferences about open source</span>
+        <button class ="read">read more</button>
+      </div>
     </div>
 
     <div class="team-member-col">
@@ -211,11 +248,13 @@ url: https://ibmdeveloperuk.github.io/
             <a href="https://www.linkedin.com/in/angelajbates/" class="social-button" target="_blank"><img src="assets/img/linkedin.png"/></a>
       </h3>
       <br />
-      <p>
+      <div class = "post">
         Developer programmes, Influencer relations and marketing,Business
-        Development,Startups and Developer engagement,Accelerator, Investor and
-        Startup Community Relations
-      </p>
+        Development<span class="dots">...</span>
+        <span class="more">,Startups and Developer engagement,Accelerator, Investor and
+        Startup Community Relations</span>
+        <button class ="read">read more</button>
+      </div>
     </div>
 
     <div class="team-member-col">
@@ -229,14 +268,17 @@ url: https://ibmdeveloperuk.github.io/
             <a href="https://www.linkedin.com/in/mohaghighi/" class="social-button" target="_blank"><img src="assets/img/linkedin.png"/></a>
       </h3>
       <br />
-      <p>
+      <div class = "post">
         As a member of this amazing family of advocates, Dr Mo Haghighi leads
-        IBM's Developer Ecosystems Group in Europe. His responsibilities include
+        IBM's Developer Ecosystems<span class="dots">...</span>
+        <span class="more"> Group in Europe. His responsibilities include
         leading several teams of developer advocates, community managers and
         business development managers in UKI, Benelux, DACH, France, SPGi,
         Italy, CEE, and overseeing all advocacy operations and developer-related
         activities in Europe.
-      </p>
+      </span>
+      <button class ="read">read more</button>
+      </div>
     </div>
   </div>
 </div>
@@ -293,3 +335,5 @@ url: https://ibmdeveloperuk.github.io/
     </div>
   </div>
 </div>
+
+  

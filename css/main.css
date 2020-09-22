@@ -191,8 +191,13 @@ a.nav-link:active {
 }
 
 
-/*Read more */
+.more {
+  display : none ; 
+}
 
-#more {display: inline-block;}
-
+button 
+{
+  text-transform: capitalize;
+  cursor: pointer;
+  }
 
