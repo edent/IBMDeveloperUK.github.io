@@ -115,8 +115,12 @@ button {
 }
 
 .navbar {
-  overflow: hidden;
   background-color: #1f70c1;
+  padding: 0.6rem;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  overflow-y: visible;
 }
 
 .navbar a {
