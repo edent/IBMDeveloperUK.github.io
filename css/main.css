@@ -77,8 +77,6 @@ a {
   font-weight: bold;
 }
 
-
-
 /* Button */
 
 .primary-button {
@@ -93,10 +91,9 @@ a {
   background-color: #3595f5;
 }
 
-
 .social-button {
   padding: 5px 10px;
-  
+
   color: #fff;
   border-radius: 50px;
   display: inline-block;
@@ -108,96 +105,73 @@ a {
 
 /* Navigation wrapper */
 
-nav {
+.more {
+  display: none;
+}
+
+button {
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.navbar {
+  overflow: hidden;
   background-color: #1f70c1;
-  padding: 0.6rem;
-  width: 100%;
-  position: fixed;
-  z-index: 2;
-  overflow-y: visible;
 }
 
-/* Navigation title - web */
-
-.nav-title {
-  display: inline-block;
-}
-
-span.Icon--logo {
+.navbar a {
+  float: left;
+  font-size: 16px;
   color: white;
-  position: absolute;
-  top: calc(0.6rem * 1.5);
-  left: 0.8rem;
-}
-
-a.home-link,
-a.nav-link {
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
 }
 
-a.home-link:link,
-a.home-link:visited,
-.home-text {
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
   color: white;
-  font-weight: 700;
-  margin: 0;
-  margin-right: 1.2rem;
-  margin-left: 2rem;
-}
-
-a.home-link:hover,
-a.home-link:active {
-  color: #97e3ff;
-}
-
-span.Icon--caretDown {
-  color: white;
-  display: none;
-}
-
-/* Navigation menu - web */
-
-.nav-menu {
-  display: inline-block;
-  padding: 0;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
-.nav-list-item {
-  display: inherit;
-  margin-left: 1.2rem;
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #f9f9f9;
+  color: #1f70c1;
 }
 
-a.nav-link:link,
-a.nav-link:visited {
-  color: white;
-}
-
-a.nav-link:hover,
-a.nav-link:active {
-  color: #97e3ff;
-}
-
-.home-link {
-  display: inline-block;
-}
-
-.home-text {
+.dropdown-content {
   display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-#extra-mobile-link {
-  display: none;
+.dropdown-content a {
+  float: none;
+  color: #1f70c1;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
 
-
-.more {
-  display : none ; 
+.dropdown-content a:hover {
+  background-color: #ddd;
 }
 
-button 
-{
-  text-transform: capitalize;
-  cursor: pointer;
-  }
-
+.dropdown:hover .dropdown-content {
+  display: block;
+}
