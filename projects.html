@@ -17,98 +17,56 @@ url: https://ibmdeveloperuk.github.io/
 </div>
 
 <!-- Container for no results text -->
-<div class="section text-center">
+<div id="main-section" class="section text-center">
   <input
+    id="search-input"
     class="search"
     type="text"
     name="search"
     placeholder="Search Projects"
     autocomplete="off"
+    onkeyup="searchProjects()"
   />
 </div>
 
+<script>
+  function searchProjects() {
+    var input, filter, ul, i, txtValue;
+    input = document.getElementById("search-input");
+    filter = input.value.toUpperCase();
+    console.log("Input to filter ", filter);
+    ul = document.getElementById("project-container-list");
+
+    for (i = 0; i < ul.childNodes.length; i++) {
+      languageNode = ul.childNodes[i].childNodes[0].childNodes[0].childNodes[2];
+      if (languageNode) {
+        nodeValue = languageNode.textContent.toUpperCase();
+      }
+
+      if (nodeValue.indexOf(filter) > -1) {
+        ul.childNodes[i].style.display = "";
+      } else {
+        ul.childNodes[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
 <!-- Projects grid -->
-<div class="section bg-white">
- 
+<div id="project-section" class="section bg-white">
   <div
     id="main-project-container"
-    class="d-flex justify-center flex-wrap project-overflow">
-    </div>
+    class="d-flex justify-center flex-wrap project-overflow"
+  >
+    <ul
+      id="project-container-list"
+      class="d-flex justify-center flex-wrap project-overflow"
+    ></ul>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"
       async
     ></script>
 
-    <script>
-      var request = new XMLHttpRequest();
-      request.open(
-        "GET",
-        "https://api.github.com/users/IBMDeveloperUK/repos?per_page=100",
-        true
-      );
-      request.onload = function () {
-        let data = JSON.parse(this.response);
-        console.log(data);
-
-        function makeProjectGrid() {
-          // Establish the array which acts as a data source for the list
-          let listData = data,
-            // Set up the loop that goes through the array 1 index at a time
-            numberOfListItems = listData.length,
-            listItem,
-            i;
-
-          for (i = 0; i < numberOfListItems; ++i) {
-            // create a project tile for each repository
-            projectContainer = document.createElement("div");
-            projectContainer.id = "project-container";
-            projectContainer.className = "project-container";
-            document
-              .getElementById("main-project-container")
-              .appendChild(projectContainer);
-
-            project = document.createElement("div");
-            project.id = "project";
-            project.className = "project";
-            projectContainer.appendChild(project);
-
-            projectContents = document.createElement("div");
-            projectContents.id = "project-contents";
-            project.appendChild(projectContents);
-
-            title = document.createElement("h3");
-            title.id = "title";
-            title.innerHTML = listData[i].name;
-            projectContents.appendChild(title);
-
-            description = document.createElement("p");
-            description.id = "description";
-            if (listData[i].description) {
-              description.innerHTML = listData[i].description;
-            } else {
-              description.innerHTML = "No description to show!";
-            }
-            projectContents.appendChild(description);
-
-            language = document.createElement("p");
-            language.id = "language";
-            language.innerHTML = listData[i].language;
-            projectContents.appendChild(language);
-
-            link = document.createElement("a");
-            link.id = "link";
-            link.className = "primary-button";
-            link.innerHTML = "View Project on GitHub";
-            link.href = listData[i].html_url;
-            link.target = "_blank";
-            projectContents.appendChild(link);
-          }
-        }
-
-        makeProjectGrid();
-      };
-      request.send();
-    </script>
-  
-
+    <script type="text/javascript" src="js/build-project-grid.js"></script>
+  </div>
 </div>
