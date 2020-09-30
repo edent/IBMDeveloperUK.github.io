@@ -17,23 +17,51 @@ url: https://ibmdeveloperuk.github.io/
 </div>
 
 <!-- Container for no results text -->
-<div class="section text-center">
+<div id="main-section" class="section text-center">
   <input
+    id="search-input"
     class="search"
     type="text"
     name="search"
     placeholder="Search Projects"
     autocomplete="off"
+    onkeyup="myFunction()"
   />
 </div>
 
+<script>
+  function myFunction() {
+    var input, filter, ul, i, txtValue;
+    input = document.getElementById("search-input");
+    filter = input.value.toUpperCase();
+    console.log("Input to filter ", filter);
+    ul = document.getElementById("project-container-list");
+
+    for (i = 0; i < ul.childNodes.length; i++) {
+      languageNode = ul.childNodes[i].childNodes[0].childNodes[0].childNodes[2]; //.textContent;
+      if (languageNode) {
+        nodeValue = languageNode.textContent.toUpperCase();
+      }
+
+      if (nodeValue.indexOf(filter) > -1) {
+        ul.childNodes[i].style.display = "";
+      } else {
+        ul.childNodes[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
 <!-- Projects grid -->
-<div class="section bg-white">
- 
+<div id="project-section" class="section bg-white">
   <div
     id="main-project-container"
-    class="d-flex justify-center flex-wrap project-overflow">
-    </div>
+    class="d-flex justify-center flex-wrap project-overflow"
+  >
+    <ul
+      id="project-container-list"
+      class="d-flex justify-center flex-wrap project-overflow"
+    ></ul>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"
       async
@@ -64,7 +92,7 @@ url: https://ibmdeveloperuk.github.io/
             projectContainer.id = "project-container";
             projectContainer.className = "project-container";
             document
-              .getElementById("main-project-container")
+              .getElementById("project-container-list")
               .appendChild(projectContainer);
 
             project = document.createElement("div");
@@ -109,6 +137,5 @@ url: https://ibmdeveloperuk.github.io/
       };
       request.send();
     </script>
-  
-
+  </div>
 </div>
