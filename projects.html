@@ -25,12 +25,12 @@ url: https://ibmdeveloperuk.github.io/
     name="search"
     placeholder="Search Projects"
     autocomplete="off"
-    onkeyup="searchFunction()"
+    onkeyup="searchProjects()"
   />
 </div>
 
 <script>
-  function searchFunction() {
+  function searchProjects() {
     var input, filter, ul, i, txtValue;
     input = document.getElementById("search-input");
     filter = input.value.toUpperCase();
