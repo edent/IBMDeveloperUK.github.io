@@ -2,14 +2,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <meta
       name="description"
@@ -19,7 +21,6 @@
       name="keywords"
       content="ibm, open, source, open source, material, workshop"
     />
-    
 
     <!-- Page Title -->
     <title>IBM Developer | {{ page.title }}</title>
@@ -35,52 +36,43 @@
   </head>
 
   <body>
-    <!-- Navigation Bar -->
-    <nav>
+    <div class="navbar">
+      <a class="logo" href="{{ site.baseurl }}/"><b>IBM Developer UK</b></a>
+      <a class="logo" href="{{ site.baseurl }}/projects">Projects</a>
+      <a class="logo" href="https://github.com/IBMDeveloperUK" target="_blank"
+        >GitHub</a>
 
-      <div class="nav-title">
-        <!-- <span class="Icon Icon--logo Icon--large"></span> -->
-
-        <!-- Link in web -->
-        <a class="home-link" href="{{ site.baseurl }}/">IBM Developer UK</a>
-
-        <!-- Text in mobile -->
-        <p class="home-text">IBM Developer UK</p>
-        <span id="caret" class="Icon Icon--caretDown"></span>
-      </div>
-    
-      <ul class="nav-menu">
-        <!-- This link only exists in mobile -->
-        <li id="extra-mobile-link" class="nav-list-item">
-          <a class="nav-link" href="{{ site.baseurl }}/">IBM Developer UK</a>
-        </li>
-
-        <li class="nav-list-item">
-          <a class="nav-link" href="{{ site.baseurl }}/projects">Projects</a>
-        </li>
-
-        <li class="nav-list-item">
+      <div class="dropdown">
+        <button class="dropbtn">
+          Meetup
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
           <a
-            class="nav-link"
-            href="https://www.meetup.com/IBM-Code-London/"
-            target="_blank" >Meetup</a>
-        </li>
-
-        <li class="nav-list-item list-end">
-          <a
-            class="nav-link"
-            href="https://github.com/IBMDeveloperUK"
+            class=""
+            href="https://www.meetup.com/IBM-Code-Bristol/"
             target="_blank"
-            >GitHub</a
+            >Bristol</a
           >
-        </li>
-      </ul>
-    </nav>
+          <a
+            class=""
+            href="https://www.meetup.com/IBM-Code-London/"
+            target="_blank"
+            >London</a
+          >
+          <a
+            class=""
+            href="https://www.meetup.com/IBM-Code-Edinburgh/"
+            target="_blank"
+            >Scotland</a
+          >
+        </div>
+      </div>
+      
+    </div>
 
     <!-- Site Wrapper -->
-    <div>
-      {{ content }}
-    </div>
+    <div>{{ content }}</div>
 
     <footer class="section footer text-center">
       @2020 IBM Developer UK, Inc
