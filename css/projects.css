@@ -32,15 +32,17 @@
   overflow: auto;
 }
 
+
 /*Responsive design for project page */
 
-@media (max-width: 768px) {
+@media (max-width: 1232px) {
 .project-container
 {
-	  padding-top: 1rem;
+  	padding-top: 1rem;
 		padding-bottom: 3rem;
 	}
 
+ 
 .project-container 
 {
 		min-width: 350px;
@@ -66,9 +68,10 @@
  .search
  {
   position: relative;
-  top : 25px;
+  top : 10px;
   padding-left: 60px;
   padding-right: 60px;
   padding-top: 20px;
+  text-align: center;
  } 
 }
