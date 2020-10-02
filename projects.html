@@ -7,12 +7,15 @@ url: https://ibmdeveloperuk.github.io/
 
 <!-- Header -->
 
-<div class="header home-header text-center"><br><br>
+<div class="header home-header text-center">
+  <br /><br />
 
   <div>
     <h1>Projects</h1>
     <h2 class="subheading">
-      <a href="https://twitter.com/CodeMeetup" target="_blank">Join us on Twitter</a>
+      <a href="https://twitter.com/CodeMeetup" target="_blank"
+        >Join us on Twitter</a
+      >
     </h2>
   </div>
 </div>
@@ -39,12 +42,20 @@ url: https://ibmdeveloperuk.github.io/
     ul = document.getElementById("project-container-list");
 
     for (i = 0; i < ul.childNodes.length; i++) {
-      languageNode = ul.childNodes[i].childNodes[0].childNodes[0].childNodes[2];
-      if (languageNode) {
-        nodeValue = languageNode.textContent.toUpperCase();
+      titleNode = ul.childNodes[i].childNodes[0].childNodes[0].childNodes[0];
+      if (titleNode) {
+        titleNodeValue = titleNode.textContent.toUpperCase();
       }
 
-      if (nodeValue.indexOf(filter) > -1) {
+      languageNode = ul.childNodes[i].childNodes[0].childNodes[0].childNodes[2];
+      if (languageNode) {
+        languageNodeValue = languageNode.textContent.toUpperCase();
+      }
+
+      if (
+        titleNodeValue.indexOf(filter) > -1 ||
+        languageNodeValue.indexOf(filter) > -1
+      ) {
         ul.childNodes[i].style.display = "";
       } else {
         ul.childNodes[i].style.display = "none";
