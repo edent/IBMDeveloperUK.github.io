@@ -6,7 +6,7 @@ request.open(
 );
 request.onload = function () {
   let data = JSON.parse(this.response);
-  console.log(data);
+  console.log("project data array", data);
 
   function makeProjectGrid() {
     // Establish the array which acts as a data source for the list
@@ -17,6 +17,7 @@ request.onload = function () {
       i;
 
     for (i = 0; i < numberOfListItems; ++i) {
+      listData[i].name = listData[i].name.replace(/-/g, " ");
       // create a project tile for each repository
       projectContainer = document.createElement("div");
       projectContainer.id = "project-container";
