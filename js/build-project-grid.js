@@ -6,7 +6,7 @@ request.open(
 );
 request.onload = function () {
   let data = JSON.parse(this.response);
-  //console.debug("project data array", data);
+  console.debug("project data array", data);
 
   function makeProjectGrid() {
     // Establish the array which acts as a data source for the list
@@ -19,28 +19,24 @@ request.onload = function () {
       listData[i].name = listData[i].name.replace(/-/g, " ");
       // create a project tile for each repository
       projectContainer = document.createElement("div");
-      projectContainer.id = "project-container";
       projectContainer.className = "project-container";
       document
         .getElementById("project-container-list")
         .appendChild(projectContainer);
 
       project = document.createElement("div");
-      project.id = "project";
       project.className = "project";
       projectContainer.appendChild(project);
 
       projectContents = document.createElement("div");
-      projectContents.id = "project-contents";
       project.appendChild(projectContents);
 
       title = document.createElement("h3");
-      title.id = "title";
       title.innerHTML = listData[i].name;
       projectContents.appendChild(title);
 
       description = document.createElement("p");
-      description.id = "description";
+      description.className = "project-description";
       if (listData[i].description) {
         description.innerHTML = listData[i].description;
       } else {
@@ -48,13 +44,64 @@ request.onload = function () {
       }
       projectContents.appendChild(description);
 
+      var container = document.createElement("div");
+      container.className = "language";
+
+      var dot = document.createElement("div");
+      var dotClass = "";
+
+      switch (listData[i].language) {
+        case "Go":
+          dotClass = "go";
+          break;
+
+        case "Jupyter Notebook":
+          dotClass = "jupyter-notebook";
+          break;
+
+        case "JavaScript":
+          dotClass = "javascript";
+          break;
+
+        case "HTML":
+          dotClass = "html";
+          break;
+
+        case "Python":
+          dotClass = "python";
+          break;
+
+        case "Java":
+          dotClass = "java";
+          break;
+
+        case "Shell":
+          dotClass = "shell";
+          break;
+
+        case "CSS":
+          dotClass = "css";
+          break;
+
+        case "TSQL":
+          dotClass = "tsql";
+          break;
+
+        default:
+          dotClass = "";
+      }
+      dot.className = "dot " + dotClass;
+
       language = document.createElement("p");
-      language.id = "language";
       language.innerHTML = listData[i].language;
-      projectContents.appendChild(language);
+
+      if (listData[i].language) {
+        container.appendChild(dot);
+        container.appendChild(language);
+        projectContents.appendChild(container);
+      }
 
       link = document.createElement("a");
-      link.id = "link";
       link.className = "primary-button";
       link.innerHTML = "View Project on GitHub";
       link.href = listData[i].html_url;
