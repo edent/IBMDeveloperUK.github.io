@@ -6,14 +6,13 @@ request.open(
 );
 request.onload = function () {
   let data = JSON.parse(this.response);
-  console.log("project data array", data);
+  //console.debug("project data array", data);
 
   function makeProjectGrid() {
     // Establish the array which acts as a data source for the list
     let listData = data,
       // Set up the loop that goes through the array 1 index at a time
       numberOfListItems = listData.length,
-      listItem,
       i;
 
     for (i = 0; i < numberOfListItems; ++i) {
