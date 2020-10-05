@@ -1,3 +1,7 @@
+---
+permalink: /index.html
+---
+
 To install this and run it locally follow these steps
 
 1. Install Ruby (https://www.ruby-lang.org/en/documentation/installation/)
