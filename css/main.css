@@ -119,73 +119,6 @@ button {
   cursor: pointer;
 }
 
-.navbar {
-  background-color: #1f70c1;
-  padding: 0.2rem;
-  width: 100%;
-  position: fixed;
-  z-index: 2;
-  overflow-y: visible;
-  display: none;
-}
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-.navbar a:hover,
-.dropdown:hover .dropbtn {
-  background-color: #f9f9f9;
-  color: #1f70c1;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: #1f70c1;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 /* Responsive design for homepage*/
 
 @media screen and (max-width: 640px) {
@@ -220,8 +153,6 @@ button {
   float: right;
 }
 
-/*******************/
-
 /*Strip the ul of padding and list styling*/
 ul {
   list-style-type: none;
@@ -229,6 +160,7 @@ ul {
   padding: 0;
   position: absolute;
 }
+
 /*Create a horizontal list with spacing*/
 li {
   display: inline-block;
@@ -236,6 +168,7 @@ li {
   margin-right: 1px;
   /* border-right: 1px solid white; */
 }
+
 /*Style for menu links*/
 li a,
 .show-dd {
@@ -332,6 +265,7 @@ input[type="checkbox"]:checked ~ #menu {
 input[type="checkbox"]:checked ~ #meetup-dropdown {
   display: block;
 }
+
 /*Responsive Styles*/
 @media screen and (max-width: 760px) {
   /*Make dropdown links appear inline*/
@@ -339,6 +273,7 @@ input[type="checkbox"]:checked ~ #meetup-dropdown {
     position: static;
     display: none;
   }
+
   /*Create vertical spacing*/
   li {
     margin-bottom: 1px;
@@ -348,11 +283,13 @@ input[type="checkbox"]:checked ~ #meetup-dropdown {
     background-color: #185ca0;
     text-align: left;
   }
+
   /*Make all menu links full width*/
   ul li,
   li a {
     width: 100%;
   }
+
   /*Display 'show menu' link*/
   .show-menu {
     display: block;
@@ -378,15 +315,6 @@ input[type="checkbox"]:checked ~ #meetup-dropdown {
     margin: 0;
   }
 }
-/* 
-.show {
-  display: block;
-}
-
-.hide {
-  display: none;
-} */
-/********************/
 
 @media screen and (max-width: 500px) {
   .navbar a.logo {
