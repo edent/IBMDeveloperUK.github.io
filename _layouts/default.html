@@ -13,6 +13,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    <script>
+      $(document).ready(function () {
+        $("ul li label").click(function () {
+          $(this).toggleClass("active");
+        });
+
+        $("label.show-menu").click(function () {
+          $(".show-menu i").toggleClass("fa-times");
+          $(".show-menu i").toggleClass("fa-bars");
+        });
+      });
+    </script>
+
     <meta
       name="description"
       content="IBM Developer UK project, workshops and material"
@@ -36,40 +49,38 @@
   </head>
 
   <body>
-    <div class="navbar">
-      <a class="logo" href="{{ site.baseurl }}/"><b>IBM Developer UK</b></a>
-      <a class="logo" href="{{ site.baseurl }}/projects">Projects</a>
-      <a class="logo" href="https://github.com/IBMDeveloperUK" target="_blank"
-        >GitHub</a>
-
-      <div class="dropdown">
-        <button class="dropbtn">
-          Meetup
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a
-            class=""
-            href="https://www.meetup.com/IBM-Code-Bristol/"
-            target="_blank"
-            >Bristol</a
-          >
-          <a
-            class=""
-            href="https://www.meetup.com/IBM-Code-London/"
-            target="_blank"
-            >London</a
-          >
-          <a
-            class=""
-            href="https://www.meetup.com/IBM-Code-Edinburgh/"
-            target="_blank"
-            >Scotland</a
-          >
-        </div>
-      </div>
-      
-    </div>
+    <label for="show-menu" class="show-menu"><i class="fa fa-bars"></i></label>
+    <input type="checkbox" id="show-menu" role="button" />
+    <ul id="menu">
+      <li><a href="{{ site.baseurl }}/">Home</a></li>
+      <li><a href="{{ site.baseurl }}/projects">Projects</a></li>
+      <li>
+        <label for="show-dd" class="show-dd"
+          >Meetup <i class="fa fa-caret-down"></i
+        ></label>
+        <input type="checkbox" id="show-dd" role="button" />
+        <ul id="meetup-dropdown" class="hidden">
+          <li>
+            <a href="https://www.meetup.com/IBM-Code-Bristol/" target="_blank"
+              >Bristol</a
+            >
+          </li>
+          <li>
+            <a href="https://www.meetup.com/IBM-Code-London/" target="_blank"
+              >London</a
+            >
+          </li>
+          <li>
+            <a href="https://www.meetup.com/IBM-Code-Edinburgh/" target="_blank"
+              >Scotland</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://github.com/IBMDeveloperUK" target="_blank">GitHub</a>
+      </li>
+    </ul>
 
     <!-- Site Wrapper -->
     <div>{{ content }}</div>

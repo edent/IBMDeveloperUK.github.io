@@ -119,72 +119,6 @@ button {
   cursor: pointer;
 }
 
-.navbar {
-  background-color: #1f70c1;
-  padding: 0.2rem;
-  width: 100%;
-  position: fixed;
-  z-index: 2;
-  overflow-y: visible;
-}
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-.navbar a:hover,
-.dropdown:hover .dropbtn {
-  background-color: #f9f9f9;
-  color: #1f70c1;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: #1f70c1;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 /* Responsive design for homepage*/
 
 @media screen and (max-width: 640px) {
@@ -217,6 +151,169 @@ button {
 
 .navbar-right {
   float: right;
+}
+
+/*Strip the ul of padding and list styling*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+/*Create a horizontal list with spacing*/
+li {
+  display: inline-block;
+  float: left;
+  margin-right: 1px;
+  /* border-right: 1px solid white; */
+}
+
+/*Style for menu links*/
+li a,
+.show-dd {
+  display: block;
+  min-width: 140px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  background: #1f70c1;
+  text-decoration: none;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.show-dd.active {
+  background-color: #08539d;
+}
+
+/*Hover state for top level links*/
+li:hover a,
+.show-dd:hover {
+  background: #08539d;
+  color: #fff;
+}
+
+li ul {
+  min-width: 140px;
+}
+
+/*Style for dropdown links*/
+li:hover ul a {
+  background: #f3f3f3;
+  color: #1f70c1;
+  height: 40px;
+  line-height: 40px;
+}
+/*Hover state for dropdown links*/
+li:hover ul a:hover {
+  background: #fff;
+  color: #1f70c1;
+}
+/*Hide dropdown links until they are needed*/
+li ul {
+  display: none;
+}
+/*Make dropdown links vertical*/
+li ul li {
+  display: block;
+  float: none;
+}
+/*Prevent text wrapping*/
+li ul li a {
+  width: auto;
+  min-width: 100px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  background-color: #f3f3f3;
+  color: #1f70c1;
+}
+/*Display the dropdown on hover*/
+ul li a:hover + .hidden,
+.hidden:hover {
+  display: block;
+}
+
+.show {
+  display: block;
+}
+
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: #fff;
+  background: #08539d;
+  font-size: 22px;
+  text-align: left;
+  padding: 10px 0px 10px 10px;
+  display: none;
+}
+
+/*Hide checkbox*/
+input[type="checkbox"] {
+  display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type="checkbox"]:checked ~ #menu {
+  display: block;
+}
+
+input[type="checkbox"]:checked ~ #meetup-dropdown {
+  display: block;
+}
+
+/*Responsive Styles*/
+@media screen and (max-width: 760px) {
+  /*Make dropdown links appear inline*/
+  ul {
+    position: static;
+    display: none;
+  }
+
+  /*Create vertical spacing*/
+  li {
+    margin-bottom: 1px;
+  }
+
+  ul li a {
+    background-color: #185ca0;
+    text-align: left;
+  }
+
+  /*Make all menu links full width*/
+  ul li,
+  li a {
+    width: 100%;
+  }
+
+  /*Display 'show menu' link*/
+  .show-menu {
+    display: block;
+  }
+
+  .show-dd {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    background-color: #185ca0;
+    font-size: 22px;
+    text-align: left;
+    padding: 0px 0px 10px 10px;
+    display: block;
+  }
+
+  .home-header {
+    padding-top: 0px;
+    clear: both;
+  }
+
+  h1.subheading {
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 500px) {
